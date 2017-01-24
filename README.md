@@ -45,7 +45,8 @@ you should check three thinks:
 Testing of second two can be tricky, but thankfully there is a easy way of doing so.
 First, you will need to install some Ruby gems. Please run:
 
-    $ dnf install rubygem-jekyll
+    # dnf install rubygem-jekyll ruby-devel
+    $ bundle install
 
 Then you should be ready to run:
 
