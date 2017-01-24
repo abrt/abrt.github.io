@@ -1,0 +1,16 @@
+title: ABRT
+header-img: img/home-bg.jpg
+email: mmarusak@redhat.com
+description: > # this means to ignore newlines until "baseurl:"
+  The blog of the ABRT Team
+baseurl: "" # the subpath of your site, e.g. /blog
+url: "http://abrt.github.io" # the base hostname & protocol for your site
+github_username: abrt
+
+markdown: kramdown
+highlighter: rouge
+permalink: pretty
+paginate: 5
+exclude: ["less","node_modules","Gruntfile.js","package.json","README.md"]
+
+gems: [jekyll-paginate, jekyll-feed]
