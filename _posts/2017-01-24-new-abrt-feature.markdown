@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "ABRT's new features"
+title:  "ABRT 2.10.0 - new features"
 date:   2017-01-24 15:54:00 +0100
 author: Matej Habrnal
 visible: 1
