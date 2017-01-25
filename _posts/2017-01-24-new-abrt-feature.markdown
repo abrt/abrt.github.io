@@ -53,7 +53,7 @@ The new release improves Kernel vmcore plugin as well. It extends the ability
 to parse the `kdump.conf` file at any location, so the plugin can be used from a 
 container.
 
-Tha last of the new main features is added support for JavaScript report type.
+The last of the new main features is added support for JavaScript report type.
 At the moment the only supported JavaScript Engine is V8 and the only supported 
 ABRT type is Node.js. Support for next JavaScript engines will be added in the 
 future.
