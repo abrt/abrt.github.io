@@ -16,14 +16,17 @@ ABRT client ansible role is available in ansible galaxy and will be maintained b
 How to install and run the ansible role:
 
 1. install ABRT ansible role
+
 ```
 # ansible-galaxy install abrt.abrt-client-role
 ```
 
 2. create ansible playbook for example the following
+
 ```
 $ cat abrt-cli.yml
 ```
+
 ```
 ---
 - name: install and enable abrt client
@@ -33,17 +36,21 @@ $ cat abrt-cli.yml
 ```
 
 3. run ansible playbook
+
 ```
 $ ansible-playbook abrt-cli.yml
 ```
 
 If you want, you can also test ABRT functionality for instance as follows
+
 ```
 $ sleep 1000 &
 ```
+
 ```
 $ kill -SEGV %%
 ```
+
 ```
 # abrt-cli list
 id 205449a7910ff7aa84d0cf0941a3b65c58c40e08
@@ -59,4 +66,3 @@ Run 'abrt-cli report /var/spool/abrt/ccpp-2017-02-14-17:20:52-27211' for creatin
 The Autoreporting feature is disabled. Please consider enabling it by issuing
 'abrt-auto-reporting enabled' as a user with root privileges
 ```
-
