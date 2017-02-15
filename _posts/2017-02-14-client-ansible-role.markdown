@@ -21,7 +21,7 @@ How to install and run the ansible role:
 # ansible-galaxy install abrt.abrt-client-role
 ```
 
-2). create ansible playbook for example the following
+2) create ansible playbook for example the following
 
 ```
 $ cat abrt-cli.yml
@@ -35,7 +35,7 @@ $ cat abrt-cli.yml
   - abrt.abrt-client-role
 ```
 
-3). run ansible playbook
+3) run ansible playbook
 
 ```
 $ ansible-playbook abrt-cli.yml
