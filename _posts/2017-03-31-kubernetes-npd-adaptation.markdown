@@ -1,0 +1,39 @@
+---
+layout: post
+title:  "ABRT catched problems reporting to kubernetes"
+date:   2017-03-31 14:03:18 +0100
+author: Julius Milan <jmilan@redhat.com>
+visible: 1
+categories: abrt kubernetes node-problem-detector
+---
+Monitoring of failures in kubernetes nodes is now improved once more.
+
+Part of the kubernetes project, the [node-problem-detector][npd-link]
+which purpose is to report various problems occuring in kubernetes nodes to the
+upstream layers in cluster management stack is now able to report problems detected
+by ABRT. Basicly any kind of problem detected by ABRT (Uncaught Python / Java or
+Ruby exception, C/C++ Segmentation faults, Kernel problems, and others) can now
+be reported to kubernetes upstream layers.
+
+# Technical details and workflow
+Node problem detector (NPD) watches various logs, depending on its configuration,
+in case of catching ABRT messages, NPD listens on systemd-journal. When some kind
+of ABRT catchable problem occurs, ABRT logs into journal about detection.
+After this happens NPD, which listens on journal, will recognize ABRT logs and report
+them further. This functionality was achieved by creating new [configuration][conf-link]
+for ABRT adaption.
+
+# How can I use it?
+Simply add abrt-adaptor.json config to your NPD config list
+(--system-log-monitors parameter).
+
+# Short demo
+On following demo, you can see how program crashes in system with running ABRT and
+NPD are detected and reported upstream. Last but not least, you can see how this
+functionality was tested and you can use the same approach in case you need to add,
+modify or test kubernetes/node-problem-detector configuration.
+
+https://www.youtube.com/watch?v=4m70F9D-rug
+
+[npd-link]: https://github.com/kubernetes/node-problem-detector
+[conf-link]: https://github.com/kubernetes/node-problem-detector/blob/master/config/abrt-adaptor.json
