@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "ABRT catched problems reporting to Kubernetes"
+title:  "ABRT integration within kubernetes"
 date:   2017-03-31 14:03:18 +0100
 author: Julius Milan <jmilan@redhat.com>
 visible: 1
@@ -30,13 +30,12 @@ Simply add abrt-adaptor.json config to your NPD config list
 (--system-log-monitors parameter).
 
 # Short demo
-On following demo, you can see how program crashes in system with running ABRT and
+On [this demo][video-link], you can see how program crashes in system with running ABRT and
 NPD are detected and reported upstream. Last but not least, you can see how this
 functionality was tested and you can use the same approach in case you need to add,
 modify or test Kubernetes/node-problem-detector configuration.
 
-https://www.youtube.com/watch?v=4m70F9D-rug
-
 [kubernetes-link]: https://kubernetes.io/
 [npd-link]: https://github.com/kubernetes/node-problem-detector
 [conf-link]: https://github.com/kubernetes/node-problem-detector/blob/master/config/abrt-adaptor.json
+[video-link]: https://asciinema.org/a/85icvy4mgvshplljgw9tvno3f
