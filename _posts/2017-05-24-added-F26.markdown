@@ -1,0 +1,13 @@
+---
+layout: post
+title:  "We added Fedora 26 to retrace.fedoraproject.org"
+date:   2017-05-24 14:00:00 +0100
+author: Miroslav Suchý <msuchy@redhat.com>
+visible: 1
+categories: abrt retrace fedora
+---
+We've recently added Fedora 26 to [retrace.fedoraproject.org](https://retrace.fedoraproject.org/).
+We were unable to do that in branching time, because of insufficient disk space. This has been resolved now.
+And you can report your crashes on all current Fedoras now.
+
+Next time we will be able to add new Fedora version during branching time.
