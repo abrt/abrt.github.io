@@ -22,7 +22,7 @@ quite interesting on container platform such as OpenShift.
 We advise using [official faf-image](https://hub.docker.com/r/abrt/faf-image/).
 
 ```
-docker run --name faf -dit abrt/faf-image
+docker run --name faf -dit abrt/faf-image:1.2.0
 ```
 
 However you also probably want to mount volumes to ```/var/lib/postgres``` and
@@ -30,7 +30,7 @@ to ```/var/spool/faf``` to have a persistent database and FAF's data.
 
 ```
 docker run --name faf -v /var/lib/faf-docker/faf:/var/spool/faf \
- -v /var/lib/faf-docker/postgres:/var/lib/postgres/ -dit abrt/faf-image
+ -v /var/lib/faf-docker/postgres:/var/lib/postgres/ -dit abrt/faf-image:1.2.0
 ```
 
 If you run FAF for the first time, then there is no database.
