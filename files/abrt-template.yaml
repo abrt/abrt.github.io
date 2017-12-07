@@ -1,0 +1,169 @@
+apiVersion: v1
+kind: Template
+metadata:
+  name: abrt-template
+  namespace: openshift
+objects:
+- apiVersion: v1
+  kind: ServiceAccount
+  metadata:
+    name: abrt-privileged
+- apiVersion: v1
+  kind: SecurityContextConstraints
+  allowHostNetwork: true
+  allowHostPID: true
+  allowHostPorts: true
+  metadata:
+    name: abrt
+  allowPrivilegedContainer: true
+  runAsUser:
+    type: RunAsAny
+  seLinuxContext:
+    type: RunAsAny
+  users:
+  - system:serviceaccount:${PROJECT}:abrt-privileged
+- apiVersion: v1
+  kind: PersistentVolume
+  metadata:
+    name: pv-dev-log
+    labels:
+      type: local
+  spec:
+    capacity:
+      storage: 1Gi
+    accessModes:
+      - ReadWriteOnce
+    hostPath:
+      path: "/dev/log"
+- apiVersion: v1
+  kind: PersistentVolume
+  metadata:
+    name: pv-journal-socket
+    labels:
+      type: local
+  spec:
+    capacity:
+      storage: 1Gi
+    accessModes:
+      - ReadWriteOnce
+    hostPath:
+      path: "/var/run/systemd/journal/socket"
+- apiVersion: v1
+  kind: PersistentVolume
+  metadata:
+    name: pv-var-run-abrt
+    labels:
+      type: local
+  spec:
+    capacity:
+      storage: 1Gi
+    accessModes:
+      - ReadWriteOnce
+    hostPath:
+      path: "/var/run/abrt"
+- apiVersion: v1
+  kind: PersistentVolume
+  metadata:
+    name: pv-root
+    labels:
+      type: local
+  spec:
+    capacity:
+      storage: 1Gi
+    accessModes:
+      - ReadWriteOnce
+    hostPath:
+      path: "/"
+- apiVersion: v1
+  kind: PersistentVolumeClaim
+  metadata:
+    name: pvc-dev-log
+  spec:
+    accessModes:
+      - ReadWriteOnce
+    resources:
+      requests:
+        storage: 1Gi
+    volumeName: pv-dev-log
+- apiVersion: v1
+  kind: PersistentVolumeClaim
+  metadata:
+    name: pvc-journal-socket
+  spec:
+    accessModes:
+      - ReadWriteOnce
+    resources:
+      requests:
+        storage: 1Gi
+    volumeName: pv-journal-socket
+- apiVersion: v1
+  kind: PersistentVolumeClaim
+  metadata:
+    name: pvc-var-run-abrt
+  spec:
+    accessModes:
+      - ReadWriteOnce
+    resources:
+      requests:
+        storage: 1Gi
+    volumeName: pv-var-run-abrt
+- apiVersion: v1
+  kind: PersistentVolumeClaim
+  metadata:
+    name: pvc-root
+  spec:
+    accessModes:
+      - ReadWriteOnce
+    resources:
+      requests:
+        storage: 1Gi
+    volumeName: pv-root
+- apiVersion: extensions/v1beta1
+  kind: Deployment
+  metadata:
+    name: abrt-in-container.com
+  spec:
+    replicas: 1
+    template:
+      metadata:
+        labels:
+          app: web
+      spec:
+        serviceAccount: abrt-privileged
+        serviceAccountName: abrt-privileged
+        hostPID: true
+        hostNetwork: true
+        securityContext:
+          runAsUser: 0
+        containers:
+          - name: abrt-containerized
+            image: abrt/stack-fedora
+            securityContext:
+              privileged: true
+            volumeMounts:
+              - mountPath: "/dev/log"
+                name: pvc-dev-log-claim
+              - mountPath: "/var/run/systemd/journal/socket"
+                name: pvc-journal-socket-claim
+              - mountPath: "/host"
+                name: pvc-root-claim
+              - mountPath: "/var/run/abrt"
+                name: pvc-var-run-abrt-claim
+        volumes:
+        - name: pvc-dev-log-claim
+          persistentVolumeClaim:
+            claimName: pvc-dev-log
+        - name: pvc-journal-socket-claim
+          persistentVolumeClaim:
+            claimName: pvc-journal-socket
+        - name: pvc-root-claim
+          persistentVolumeClaim:
+            claimName: pvc-root
+        - name: pvc-var-run-abrt-claim
+          persistentVolumeClaim:
+            claimName: pvc-var-run-abrt
+parameters:
+- description: Name of your project given when creating (oc new-project ...).
+  displayName: Project
+  name: PROJECT
+  value: abrt
