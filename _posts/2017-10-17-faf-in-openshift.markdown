@@ -41,7 +41,7 @@ configuration doesn't allow it. To allow the container to use of root, create a 
 and add it to **anyuid's** security context constraints.
 ```
 oc create serviceaccount <sa_username>
-oc adm add-scc-to-user anyuid -z <sa_username>
+oc adm policy add-scc-to-user anyuid -z <sa_username>
 oc patch dc/<app_name> --patch '{"spec":{"template":{"spec":{"serviceAccountName": "<sa_username>"}}}}'
 ```
 Changing deployment configuration will trigger new container deployment. This time, it should succeed,
