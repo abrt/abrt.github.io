@@ -50,10 +50,11 @@ In the following image, you can see logs of some exceptions in OpenShift pod log
 If you have logging system deployed in your OpenShift [OpenShift logging], fluentd aggreates all ABRT's logs and sends them to Elasticsearch. You can browse them in kibana:
 [![img_kibana][img_kibana]][img_kibana]
 
+### Watch this demo
+[![ABRT in OpenShoft](https://img.youtube.com/vi/FQbZdKY7h5Y/0.jpg)](https://www.youtube.com/watch?v=FQbZdKY7h5Y)
+
 [python3-abrt-container-addon]: https://fedorapeople.org/~mhabrnal/abrt-for-docker/python3-abrt-container-addon-2.10.3-1.fc27.x86_64.rpm "python3-abrt-container-addon"
 [Bodhi]: https://bodhi.fedoraproject.org/updates/abrt-2.10.6-2.fc27
 [OpenShift logging]: https://docs.openshift.org/latest/install_config/aggregate_logging.html "OpenShift logging"
 [img_os_log]: /assets/abrt-for-docker/os-log2.png "ABRT's logs in OpenShift"
 [img_kibana]: /assets/abrt-for-docker/kibana2.png "Kibana ABRT's logs"
-
-
