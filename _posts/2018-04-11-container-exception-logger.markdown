@@ -8,7 +8,7 @@ categories: ABRT container exception Docker CEL
 ---
 Previously, there wasn't a way how to easily get information from inside of a
 container to a host. Therefore, we've developed a new tool
-`container-exception-logger` which allows you to send data from the container to host log.
+[container-exception-logger] which allows you to send data from the container to host log.
 The main reason why we've created
 this tool is to get users to know about problems which appear inside of containers.
 
@@ -61,3 +61,4 @@ Host's log:
 
 [container-exception-logger format specification]: https://github.com/abrt/container-exception-logger/blob/master/README.md#format-specification
 [configure logging drivers]: https://docs.docker.com/config/containers/logging/configure/
+[container-exception-logger]: https://github.com/abrt/container-exception-logger
