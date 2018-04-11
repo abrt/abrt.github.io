@@ -1,6 +1,6 @@
 # The blog
 This is the source code of ABRT's blog. You can visit it on
-[https://abrt.github.com](http://abrt.github.com).
+[https://abrt.github.io](http://abrt.github.io).
 
 # How to write a new article
 1. Write the article
