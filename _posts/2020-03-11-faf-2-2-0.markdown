@@ -1,0 +1,22 @@
+---
+layout: post
+title:  "FAF 2.2.0 released"
+date:   2020-03-11 14:00:00 +0100
+author: Michal Fabík
+visible: 1
+categories: release features faf
+---
+
+A new version of FAF has just been released. From the user's point of view, you will probably find the following changes the most noticable:
+
++ A markedly sped up `create-problems` action
++ A more capable CLI with autocompletion and wildcard support
++ Many web UI improvements
++ Fixed web UI action scheduler
+
+A more complete change log can be found [here](https://github.com/abrt/faf/blob/2.2.0/CHANGELOG.md).
+
+## Where to get the new release:
+If you want to install the new version of FAF, you can get it from our **COPR**: [@abrt/faf-el8](https://copr.fedorainfracloud.org/coprs/g/abrt/faf-el8/)
+
+or use our Docker image: [docker/abrt/faf-image](https://cloud.docker.com/u/abrt/repository/docker/abrt/faf-image).
