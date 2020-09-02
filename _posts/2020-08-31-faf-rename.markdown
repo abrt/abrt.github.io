@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "FAF is dead, long live ABRT Analytics"
-date:   2019-03-28 18:48:44 +0100
+date:   2020-08-31 18:48:44 +0100
 author: Miroslav Suchý
 visible: 1
 categories: FAF Analytics
