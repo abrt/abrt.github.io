@@ -6,7 +6,7 @@ author: Miroslav Suchý
 visible: 1
 categories:
 ---
-The project ABRT started in 2019. The initial name was `CrashWatcher`. Very quickly changed to `CrashCatcher`. But in one month, it got its final name ABRT. ABRT is the [name of a POSIX signal](https://en.wikipedia.org/wiki/Signal_(IPC)#POSIX_signals) and stems from the word `abort`.
+The project ABRT started in 2009. The initial name was `CrashWatcher`. Very quickly changed to `CrashCatcher`. But in one month, it got its final name ABRT. ABRT is the [name of a POSIX signal](https://en.wikipedia.org/wiki/Signal_(IPC)#POSIX_signals) and stems from the word `abort`.
 
 ABRT project was meant as a tool to ease the life of Red Hat Support. Unfortunately Red Hat Support never fully utilized and used ABRT (with some minor exceptions). I recently analyzed the use of ABRT, and its strength are for developers and DevOps. We can identify and helps to report bugs when new software or major release is released. Devops can leverage that we can identify crashes in their deployments and show it in a private instance of ABRT Analytics.
 
