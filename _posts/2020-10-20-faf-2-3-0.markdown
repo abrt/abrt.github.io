@@ -1,0 +1,33 @@
+---
+layout: post
+title:  "ABRT Analytics 2.3.0 released"
+date:   2020-10-20 12:00:00 +0100
+author: Michal Fabík
+visible: 1
+categories: release features faf
+---
+
+A new version of ABRT Analytics (formerly known as FAF) has just been released. From the user's point of view, you will probably find the following changes the most noticable:
+
+### Added
++ [pyfaf: Accommodate for multiple debug directories](https://github.com/abrt/faf/pull/894)
++ [webfaf: Dissociate bug from report](https://github.com/abrt/faf/pull/913)
+
+### Changed
++ [container: Make configuration files writable by root group](https://github.com/abrt/faf/pull/940)
++ [reposync: Allow expiring cache earlier](https://github.com/abrt/faf/pull/931/commits)
+
+### Fixed
++ [opsys: Filter releases without numbered verion](https://github.com/abrt/faf/pull/911)
++ [repos: dnf: Correctly handle debug packages](https://github.com/abrt/faf/pull/920)
++ [Allow empty "duplicate of" relationship for Mantis bugs](https://github.com/abrt/faf/pull/921)
++ [logging: Fix log formatting for build logs](https://github.com/abrt/faf/pull/929)
++ [pyfaf: faf_rpm: Don’t parse EVRs with non-numeric epochs](https://github.com/abrt/faf/pull/930)
++ [reposync: Re-download LOBs if missing](https://github.com/abrt/faf/pull/932)
++ [webfaf: reports: Fix non-Bugzilla bug association](https://github.com/abrt/faf/pull/937)
++ [pyfaf: problemtypes: core: Don’t ASCII-encode file names](https://github.com/abrt/faf/pull/942)
+
+## Where to get the new release:
+If you want to install the new version of FAF, you can get it from our **COPR**: [@abrt/faf-el8](https://copr.fedorainfracloud.org/coprs/g/abrt/faf-el8/)
+
+or use our Docker image: [docker/abrt/faf](https://cloud.docker.com/u/abrt/repository/docker/abrt/faf).
