@@ -1,0 +1,22 @@
+---
+layout: post
+title:  "EOL of EL6 and EL7 and removal Customer portal support"
+date:   2020-11-30 12:00:00 +0100
+author: Miroslav Suchý
+visible: 1
+categories:
+---
+
+## Packages will no longer be built for EL6 and EL7
+
+For a [long](https://github.com/abrt/faf/issues/735) [time](https://github.com/abrt/abrt/issues/1337), we talked about EOLing EL6 and EL7. What does it actually mean?
+
+RHEL 6 is [going to be EOL](https://access.redhat.com/discussions/2399461) at the end of this month (30th November 2020). We will no longer build ABRT packages for EL6 and we will stop supporting EL6 as content.
+
+RHEL 7 is still active but quite old. ABRT team will stop testing, building, and developing on top of RHEL7. We are going to focus on RHEL 8 and upcoming RHEL and Fedora. We still support RHEL 7 as content (e.g., in ABRT Analytics).
+
+This is a description of the current de-facto state. The last release of ABRT Analytics was already not built for RHEL 7.
+
+## End of reporting to Customer Portal
+
+Red Hat Customer Portal was migrated to a new backend that does not have the API which we need and as a result, we removed reporting to Customer Portal from ABRT (libreport - to be precise). 
