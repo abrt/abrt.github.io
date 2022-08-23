@@ -3,8 +3,9 @@ This is the source code of ABRT's blog. You can visit it on
 [https://abrt.github.io](http://abrt.github.io).
 
 # How to write a new article
+
 1. Write the article
-2. Create a new file in the `/_post` directory that follows the convention `YYYY-MM-DD-name-of-post.markdown`
+2. Create a new file in the `/_posts` directory that follows the convention `YYYY-MM-DD-name-of-post.markdown`
 3. The file consists of two parts separated by `---`
 
     ```
@@ -19,18 +20,20 @@ This is the source code of ABRT's blog. You can visit it on
     Put your article in Markdown format here.
     ```
 
-Don't forget to change the title, date, author and categories
+    Don't forget to change the title, date, author and categories
 
 5. Put your article into the file and style it properly
 5. Test what your article will really look like.
 6. Create commit and push to the master branch or, preferably, push to your fork and open a pull request, allowing others to comment.
 
 # How to style the article
+
 Articles are written in the Markdown format. For inspiration on using Markdown,
 see demo article in `inspiration_blog/2017-01-22-inspiration-blog.markdown` and
 see it rendered [here](http://abrt.github.io/the/inspiration/2017/01/22/inspiration-blog/).
 
 # Testing
+
 When writing code it is natural to make errors. And since creating a new blog is
 *"writing code"* you can make some as well. Therefore before pushing your article
 you should check three things:
@@ -62,4 +65,5 @@ it run and when file is edited, it is uploaded automatically. You only need to
 refresh the site in your browser.
 
 ## Credits
+
 [Original theme](https://startbootstrap.com/template-overviews/clean-blog/) - modified a bit
